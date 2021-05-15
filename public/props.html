@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<!-- 生产环境中不建议使用 -->
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+		<script type="text/babel>
+			class Tryprops extends React.Component{
+				render(){
+					const{name,age,sex}=this.props
+					return (
+						<ul>
+						<li>姓名:{name}</li>
+						<li>性别:{age}</li>
+						<li>年龄:{sex}</li>
+						</ul>
+					)					
+				}
+			}
+			reactDOM.render(<Tryprops name="yang" age="12" sex="nan"/>,document.getElementById('test1'))
+			reactDOM.render(<Tryprops name="yang" age="12" sex="nv"/>,document.getElementById('test2'))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

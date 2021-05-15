@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<!-- 生产环境中不建议使用 -->
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+		<script src="prop-types/prop-types.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!--<script type="text/babel">
+  	class Review extends React.Component{
+  		
+  		state={isHot:true};
+  		render(){
+  				const isHot=this.state.isHot
+  				return <h2 onClick={this.changeWeather}>shijcis  weather is{isHot?'晴朗':'雨天'}</h2>
+  			}
+  	  changeWeather=()=>{
+  	  		const isHot=this.state.isHot
+  	  		this.setState({isHot:!isHot})
+  	  }
+  	}
+  	ReactDOM.render(<Review/>,document.getElementById("example"));
+  	</script>-->
+  	<!--<script type="text/babel">
+			class Tryprops extends React.Component{
+				render(){
+//		  	console.log(this)
+					const{name,age,sex}=this.props
+					return (
+						<ul>
+						<li>姓名:{name}</li>
+						<li>性别:{age}</li>
+						<li>年龄:{sex}</li>
+						</ul>
+					)					
+				}
+			}
+		//给标签属性进行类型必要性 的限制
+		
+		Tryprops.propTypes={
+			name:PropTypes.string.isRequired,
+			sex:PropTypes.string,
+			age:PropTypes.number//限制age为数值
+			speak:PropTypes.func//限制speak为函数
+		}
+		Tryprops.defaultProps={
+			sex:'性别不详'
+			age:10
+		}
+		const p={name:'yyq',age:3,sex:'nan'}
+    ReactDOM.render(<Tryprops name="yang" age="12" sex="nan"/>,document.getElementById('test1'))
+		ReactDOM.render(<Tryprops {...p}/>,document.getElementById('test2'))
+		</script>-->
+	<script type="text/babel">
+		
+	class Reviewprops extends React.Component{
+		render(){
+			const {name,number}=this.props
+			return (
+				<ul>
+				<li>name:{name}</li>
+				<li>number:{number}</li>
+				</ul>
+			)
+		}
+	}
+	Reviewprops.proptypes={
+		name:PropTypes.string.Isrequired//限制name必须传
+	}
+	Reviewprops.defaultProps={
+		name:'xiaoming'//限制name的默认值
+	}
+	const person1={name:"jsji",number:123456}
+	const person2={name:"dsds",number:987654}
+	const person3={number:"23456"}
+	ReactDOM.render(<Reviewprops {...person1}/>,document.getElementById('test1'))
+	ReactDOM.render(<Reviewprops {...person2} />,document.getElementById('test2'))
+	ReactDOM.render(<Reviewprops {...person3} />,document.getElementById('test3'))
+	
+	</script>
+	
+  <title>React App</title>
+  </head>
+  <body>
+  <div id="test1"></div>
+  <div id="test2"></div>
+  <div id="test3"></div>
+  </body>
+</html>
